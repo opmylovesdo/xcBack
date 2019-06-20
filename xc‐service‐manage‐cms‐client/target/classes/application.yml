@@ -1,0 +1,27 @@
+server:
+  port: 31000
+spring:
+  application:
+    name: xc-service-manage-cms-client
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017
+      database: xc_cms
+  freemarker:
+    cache: false #关闭模板缓存，方便测试
+    settings:
+      template_update_delay: 0
+  rabbitmq:
+    host: server
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  http:
+    encoding:
+      charset:
+xuecheng:
+  mq:
+    #cms客户端监控的队列名称（不同的客户端监控的队列不能重复）
+    queue: queue_cms_postpage_03
+    routingKey: 5ccae5fdb8e86a17246008d2 #此routingKey为门户站点ID
